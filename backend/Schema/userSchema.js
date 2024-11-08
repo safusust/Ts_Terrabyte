@@ -5,8 +5,8 @@ const userSchema= new Schema({
     displayName:String,
     profileImage: String,
     location:{
-        longitude:String,
-        latitude:String
+        longitude:Number,
+        latitude:Number
     }
 });
 

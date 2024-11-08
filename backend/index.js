@@ -1,21 +1,24 @@
-const express = require('express');
-const dotenv=require('dotenv');
-const connectDB=require('./config/configDB')
+const express = require("express");
+const dotenv = require("dotenv");
+const connectDB = require("./config/configDB");
+const { Video } = require("./controller/video.controller");
 const app = express();
-dotenv.config();
+dotenv.config({ path: [".env", ".env.local"] });
+const Port=process.env.PORT
 
-const PORT = 3000;
-
-app.get('/', (req, res)=>{
-    res.status(200);
-    res.send("Welcome to root URL of Server");
+app.get("/", (req, res) => {
+  res.status(200);
+  res.send("Welcome to root URL of Server");
 });
 
-app.listen(PORT, function(err){
-    if (err) console.log("Error in server setup")
-    console.log("Server listening on Port", PORT);
-    connectDB()
-})
+app.use("/api/video",Video );
+
+
+app.listen(Port, function (err) {
+  if (err) console.log("Error in server setup");
+  console.log("Server listening on Port", Port);
+  connectDB();
+});
 
 /* 
 
