@@ -14,14 +14,11 @@ app.get("/", (req, res) => {
 app.use("/api/video",Video );
 
 
+
 app.listen(Port, function (err) {
   if (err) console.log("Error in server setup");
   console.log("Server listening on Port", Port);
   connectDB();
 });
 
-/* 
 
-
-
-*/
