@@ -10,7 +10,7 @@ const quizSchema= new Schema({
     },
     answers:String,
 });
-
-module.exports=quizSchema;
+const  Quiz= new mongoose.model("Quiz",quizSchema)
+module.exports=Quiz;
 
 

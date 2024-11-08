@@ -1,7 +1,12 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/configDB");
+
 const { Video } = require("./controller/video.controller");
+const {getReport, postReport}=require("./controller/report.controller");
+const { Educational } = require("./controller/educational.controller");
+const{Quiz}=require("./controller/quiz.controller");
+const{User}=require("./controller/user.controller")
 const app = express();
 dotenv.config({ path: [".env", ".env.local"] });
 const Port=process.env.PORT
@@ -12,7 +17,11 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/video",Video );
-
+app.use("/api/postreport",postReport);
+app.use("/api/getreport",getReport);
+app.use("/api/artical",Educational);
+app.use("/api/quiz",Quiz);
+app.use("/api/user",User);
 
 
 app.listen(Port, function (err) {

@@ -2,7 +2,7 @@ const vedioSchema =require('../Schema/VideoSchema');
 
 exports.Video = async (req, res) => {
     try {
-        const video = await vedioSchema.find();
+        const video = await vedioSchema.findOne;
         res.status(200).json(video);
     } catch (error) {
         console.error("Error fetching ", error);
