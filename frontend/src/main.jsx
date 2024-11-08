@@ -6,6 +6,8 @@ import App from "./App.jsx";
 import Home from "./pages/Home.jsx";
 import LoginForm from "./pages/account/LoginForm.jsx";
 import SignupForm from "./pages/account/SIgnupForm.jsx";
+import ReportPage from "./pages/ReportPage.jsx";
+
 const routerConfig = createBrowserRouter([
   {
     path: "/",
@@ -19,21 +21,24 @@ const routerConfig = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-        path: "/",
-      },
-    ],
-  },
-  {
-    path: "/account",
-    children: [
-      {
-        path: "login",
-        element: <LoginForm />,
       },
       {
-        path: "signup",
-        element: <SignupForm />,
+        path: "/account",
+        children: [
+          {
+            path: "login",
+            element: <LoginForm />,
+          },
+          {
+            path: "signup",
+            element: <SignupForm />,
+          },
+        ],
       },
+      {
+        path: "/reports",
+        element: <ReportPage />
+      }
     ],
   },
 ]);

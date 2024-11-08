@@ -2,22 +2,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 .roboto-thin {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
@@ -88,4 +92,12 @@
   font-family: "Roboto", sans-serif;
   font-weight: 900;
   font-style: italic;
+}
+
+.active {
+  @apply border-b-4 border-cyan-500;
+}
+
+.removeBorder {
+  @apply border-b-transparent;
 }
